@@ -5,6 +5,7 @@ ThisBuild / organization := "io.github.gogoasac"
 val catsEffectVersion = "3.5.7"
 val doobieVersion     = "1.0.0-RC5"
 val mysqlVersion      = "8.0.33"
+val munitVersion      = "1.0.0"
 
 lazy val root = (project in file("."))
   .settings(
@@ -14,6 +15,7 @@ lazy val root = (project in file("."))
       "org.tpolecat"   %% "doobie-core"         % doobieVersion,
       "org.tpolecat"   %% "doobie-hikari"       % doobieVersion,
       "mysql"           % "mysql-connector-java" % mysqlVersion,
+      "org.scalameta"  %% "munit"                % munitVersion % Test,
     ),
     // Ensure stdout is not buffered so ANSI codes render immediately
     fork                    := true,
